@@ -15,6 +15,15 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+   echo "File ". $_FILES['userfile']['name'] ." uploaded successfully.\n";
+   echo "Displaying contents\n";
+   readfile($_FILES['userfile']['tmp_name']);
+} else {
+   echo "Possible file upload attack: ";
+   echo "filename '". $_FILES['userfile']['tmp_name'] . "'.";
+}
+
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
