@@ -5,9 +5,9 @@
 	</title>
 </head>
 <body>
-
-Name: <input type="text" name="name"><br>
-
+<form name="name" action="" method="get">
+Name: <input type="text" name="name" id ="name"><br>
+</form>
 Exchange THB to JPY<br/>
 Instructions by step: <br/>
 1)Download the sample CSV File below 
@@ -39,10 +39,18 @@ if(array_key_exists('submit',$_POST)){
 You will get JPY:
 <?php
 function calculateJpy(){
+  if(file_exists('uploads/edited.csv')){
   $f_pointer=fopen("uploads/edited.csv","r"); // file pointer
   $ar=fgetcsv($f_pointer);
   $amount = $ar[0]*$ar[1];
   print $amount;
+
+
+
+}
+  else{
+    echo 'Upload your edited.csv file first';
+  }
 }
 if(array_key_exists('exchange',$_POST)){
   calculateJpy();
