@@ -9,6 +9,8 @@
     <script src="main.js"></script>
 </head>
 <body>
+<?php echo '<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />'; ?>
+<?php echo '<link href="style.css" rel="stylesheet" type="text/css" />'; ?>
 <?php
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

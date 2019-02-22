@@ -1,0 +1,10 @@
+body{
+    position: relative;
+    left: 25px;
+    background-image: url("bg.jpg");
+    font-size: 20px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border: 30px solid transparent;
+  border-image: url(bgborder.jpg) 240 round;
+}
